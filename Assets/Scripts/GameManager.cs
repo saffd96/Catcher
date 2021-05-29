@@ -60,11 +60,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         {
             pauseView.PauseToggle();
         }
-
-        if (Input.GetKeyDown(KeyCode.F) && !isGameEnded)
-        {
-            AddLive();
-        }
     }
 
     #endregion
@@ -88,24 +83,24 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     #endregion
 
 
-    #region Events Handlers
+    #region Public Methods
 
     public void RemoveLive()
     {
-        if (CurrentLives == 1)
+        CurrentLives--;
+
+        if (CurrentLives == 0)
         {
             ShowEndScreen();
             Time.timeScale = 0f;
             isGameEnded = true;
-            
         }
         else
         {
-            CurrentLives--;
             livesView.RemoveLife(CurrentLives);
         }
 
-        Debug.Log($"{CurrentLives}, {maxLives}");
+        livesView.RemoveLife(CurrentLives);
     }
 
     public void UpdateScore(int score)
@@ -120,11 +115,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         scoreLabel.text = $"Score: {totalScore}";
     }
 
-    #endregion
-
-
-    #region Private Methods
-
     public void AddLive()
     {
         if (CurrentLives != MaxLives)
@@ -133,6 +123,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             livesView.AddLive();
         }
     }
+
+    #endregion
+
+
+    #region Private Methods
 
     private void ShowEndScreen()
     {

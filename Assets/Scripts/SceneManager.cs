@@ -13,7 +13,6 @@ public class SceneManager : MonoBehaviour
     public void LoadScene(int index)
     {
         Time.timeScale = 1f;
-        GameManager.Instance.ResetGame();
         UnityEngine.SceneManagement.SceneManager.LoadScene(index);
         Debug.LogError($"Load Scene {index}");
     }

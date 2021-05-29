@@ -8,6 +8,10 @@ TagManager:
   - Item
   - GoodItem
   - BadItem
+  - BottomWall
+  - DetectionZone
+  - GoodPowerUp
+  - BadPowerUp
   layers:
   - Default
   - TransparentFX

@@ -13,10 +13,11 @@ public class BaseItem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!other.gameObject.CompareTag(Tags.Cat)) return;
-
-        ApplyEffect();
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag(Tags.Cat))
+        {
+            ApplyEffect();
+            Destroy(gameObject);
+        }
     }
 
     #endregion

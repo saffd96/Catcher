@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Cat : MonoBehaviour
@@ -15,8 +16,23 @@ public class Cat : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.IsGamePaused) return;
+        if (GameManager.Instance.IsGamePaused)
+        {
+            return;
+        }
+        if (!GameManager.Instance.IsGamePaused&&!GameManager.Instance.IsAutoPlay)
+        {
+            MoveCatWithMouse();
+        }
+    }
 
+    #endregion
+
+
+    #region Private Methods
+
+    private void MoveCatWithMouse()
+    {
         Vector3 positionInPixels = Input.mousePosition;
         Vector3 positionInWorld = Camera.main.ScreenToWorldPoint(positionInPixels);
 
@@ -28,6 +44,6 @@ public class Cat : MonoBehaviour
         catPosition.x = Mathf.Clamp(catPosition.x, -boundary, boundary);
         transform.position = catPosition;
     }
-
+    
     #endregion
 }

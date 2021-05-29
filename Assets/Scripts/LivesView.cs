@@ -33,9 +33,6 @@ public class LivesView : MonoBehaviour
             if (livesImages[i] == null)
             {
                 CreateLife(i);
-
-                Debug.Log("Added 1 live");
-
                 break;
             }
         }
@@ -48,7 +45,7 @@ public class LivesView : MonoBehaviour
             Destroy(livesImages[currentLifes]);
         }
     }
-
+    
     #endregion
 
 
@@ -56,7 +53,7 @@ public class LivesView : MonoBehaviour
 
     private void CreateLife(int i)
     {
-        livesImages[i] = Instantiate(livePrefab, new Vector3(5f + 50 * i, -5f), Quaternion.identity);
+        livesImages[i] = Instantiate(livePrefab, new Vector3(5f + 50 * i-1, -5f), Quaternion.identity);
         livesImages[i].transform.SetParent(canvasGameObject.transform, false);
     }
 
