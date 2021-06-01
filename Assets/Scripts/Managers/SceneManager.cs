@@ -6,8 +6,12 @@ public class SceneManager : MonoBehaviour
 
     public void ExitGame()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
         Debug.LogError("QUIT");
+#endif
     }
 
     public void LoadScene(int index)

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Cat : MonoBehaviour
@@ -6,8 +5,6 @@ public class Cat : MonoBehaviour
     #region Variables
 
     [SerializeField] private float boundary;
-
-    Vector3 catPosition;
 
     #endregion
 
@@ -20,7 +17,8 @@ public class Cat : MonoBehaviour
         {
             return;
         }
-        if (!GameManager.Instance.IsGamePaused&&!GameManager.Instance.IsAutoPlay)
+
+        if (!GameManager.Instance.IsGamePaused && !GameManager.Instance.IsAutoPlay)
         {
             MoveCatWithMouse();
         }
@@ -35,8 +33,8 @@ public class Cat : MonoBehaviour
     {
         Vector3 positionInPixels = Input.mousePosition;
         Vector3 positionInWorld = Camera.main.ScreenToWorldPoint(positionInPixels);
-
-        catPosition = positionInWorld;
+        
+        var catPosition = positionInWorld;
 
         catPosition.y = transform.position.y;
         catPosition.z = 0;
@@ -44,6 +42,6 @@ public class Cat : MonoBehaviour
         catPosition.x = Mathf.Clamp(catPosition.x, -boundary, boundary);
         transform.position = catPosition;
     }
-    
+
     #endregion
 }

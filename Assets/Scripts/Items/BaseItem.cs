@@ -5,6 +5,14 @@ public class BaseItem : MonoBehaviour
     #region Variables
 
     [SerializeField] private int score;
+    [SerializeField] private Rigidbody2D rb;
+
+    #endregion
+
+
+    #region Properties
+
+    public Rigidbody2D Rb => rb;
 
     #endregion
 
@@ -18,6 +26,16 @@ public class BaseItem : MonoBehaviour
             ApplyEffect();
             Destroy(gameObject);
         }
+    }
+
+    #endregion
+
+
+    #region Public Methods
+
+    public void SetGravity(float gravityScale)
+    {
+        rb.gravityScale = gravityScale;
     }
 
     #endregion
