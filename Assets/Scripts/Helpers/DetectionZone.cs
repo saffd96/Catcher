@@ -15,11 +15,6 @@ public class DetectionZone : MonoBehaviour
 
     public void Reset()
     {
-        if (cat == null)
-        {
-            cat = FindObjectOfType<Cat>();
-        }
-
         var xOffsetInPixels = Screen.width;
         var vectorOffsetX = new Vector3(xOffsetInPixels, 0, 0);
         var xOffsetInWorld = Camera.main.ScreenToWorldPoint(vectorOffsetX);
@@ -30,7 +25,15 @@ public class DetectionZone : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (GameManager.Instance.IsAutoPlay)
+        if (!GameManager.Instance.IsAutoPlay) return;
+
+        if (cat == null)
+        {
+            cat = FindObjectOfType<Cat>();
+            Debug.Log("cat = FindObjectOfType<Cat>();");
+        }
+
+        else
         {
             var contactPoint = other.transform.position;
             var catTransform = cat.transform;

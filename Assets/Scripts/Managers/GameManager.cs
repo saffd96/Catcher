@@ -11,6 +11,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [Header("Auto play")]
     [SerializeField] private bool isAutoPlay;
 
+    [Header("DEV")]
+    [SerializeField] private BaseItem[] sceneItems;
+
     #endregion
 
 
@@ -41,6 +44,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         TotalScore = 0;
 
         CheckForNull();
+        DeleteItemsOnScene();
 
         uiManager.Reset();
         livesManager.Reset();
@@ -93,6 +97,23 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         if (livesManager == null)
         {
             livesManager = FindObjectOfType<LivesManager>();
+        }
+
+        if (helperManager == null)
+        {
+            helperManager = FindObjectOfType<HelperManager>();
+        }
+    }
+
+    private void DeleteItemsOnScene()
+    {
+        sceneItems = null;
+
+        sceneItems = FindObjectsOfType<BaseItem>();
+
+        foreach (var item in sceneItems)
+        {
+            Destroy(item);
         }
     }
 

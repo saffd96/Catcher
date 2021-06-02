@@ -376,6 +376,10 @@ PrefabInstance:
       propertyPath: cat
       value: 
       objectReference: {fileID: 2053207231}
+    - target: {fileID: 3469451487726469707, guid: 83676ce912a47f746855ed0c091ef8e4, type: 3}
+      propertyPath: isAutoPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3469451489755589587, guid: 83676ce912a47f746855ed0c091ef8e4, type: 3}
       propertyPath: m_RootOrder
       value: 5
