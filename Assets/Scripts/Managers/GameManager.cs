@@ -1,19 +1,23 @@
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     #region Variables
 
+    [Header("Managers")]
     [SerializeField] private UIManager uiManager;
     [SerializeField] private LivesManager livesManager;
     [SerializeField] private HelperManager helperManager;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip deathSound;
 
     [Header("Auto play")]
     [SerializeField] private bool isAutoPlay;
 
     [Header("DEV")]
     [SerializeField] private BaseItem[] sceneItems;
-
 
     #endregion
 
@@ -60,9 +64,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         if (livesManager.CurrentLives == 0)
         {
-            ShowEndScreen();
-            Time.timeScale = 0f;
-            IsGameEnded = true;
+            StartCoroutine(LoseGame(0.1f, deathSound));
         }
 
         livesManager.UpdateLivesImages();
@@ -112,9 +114,23 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         foreach (var item in sceneItems)
         {
-            Debug.Log(nameof(item));
             Destroy(item.gameObject);
         }
+    }
+
+    #endregion
+
+
+    #region Coroutines
+
+    IEnumerator LoseGame(float seconds, AudioClip sfx)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        SfxAudioSource.Instance.PlaySfx(sfx);
+        ShowEndScreen();
+        Time.timeScale = 0f;
+        IsGameEnded = true;
     }
 
     #endregion

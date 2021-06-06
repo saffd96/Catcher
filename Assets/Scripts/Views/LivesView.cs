@@ -41,12 +41,11 @@ public class LivesView : MonoBehaviour
 
     public void AddLive()
     {
-        for (int i = 0; i < livesImages.Length; i++)
+        for (var i = 0; i < livesImages.Length; i++)
         {
-            if (livesImages[i] == null)
+            if (livesImages[i].activeSelf == false)
             {
                 SetActiveLife(true, i);
-
                 break;
             }
         }

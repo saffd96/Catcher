@@ -259,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: -500
   rb: {fileID: 1929723624}
+  deathAudioClip: {fileID: 8300000, guid: c60ec26f8ecba0b41af1c8d1879341d0, type: 3}
 --- !u!1 &6564239013494436912
 GameObject:
   m_ObjectHideFlags: 0

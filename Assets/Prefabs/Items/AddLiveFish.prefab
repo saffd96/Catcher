@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 5000
   rb: {fileID: 1422311643}
+  deathAudioClip: {fileID: 8300000, guid: b9e9fb1bacfc4704992d4492b0d1f29d, type: 3}
 --- !u!61 &8860498147618983788
 BoxCollider2D:
   m_ObjectHideFlags: 0

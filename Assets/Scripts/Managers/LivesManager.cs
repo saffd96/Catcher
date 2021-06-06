@@ -9,6 +9,9 @@ public class LivesManager : MonoBehaviour
     [Header("SET LIVES")]
     [SerializeField] private int lives;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip hitSound;
+
     #endregion
 
 
@@ -32,6 +35,7 @@ public class LivesManager : MonoBehaviour
     public void RemoveLive()
     {
         CurrentLives--;
+        SfxAudioSource.Instance.PlaySfx(hitSound);
     }
 
     public void UpdateLivesImages()

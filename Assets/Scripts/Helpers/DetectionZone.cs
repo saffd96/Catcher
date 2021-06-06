@@ -40,7 +40,7 @@ public class DetectionZone : MonoBehaviour
         {
             catTransform.position = new Vector3(contactPoint.x, catTransform.position.y, 0);
         }
-        else if (other.gameObject.CompareTag(Tags.BadPowerUp)) //other.gameObject.CompareTag(Tags.BadItem) ))
+        else if (other.gameObject.CompareTag(Tags.BadPowerUp))
         {
             catTransform.position = new Vector3(-contactPoint.x, catTransform.position.y, 0);
         }

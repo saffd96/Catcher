@@ -50,6 +50,7 @@ MonoBehaviour:
   uiManager: {fileID: 5170630770362740383}
   livesManager: {fileID: 5170630770893139660}
   helperManager: {fileID: 490626879077266688}
+  deathSound: {fileID: 8300000, guid: 046ec019b92ff4849a69b2e8f07b7263, type: 3}
   isAutoPlay: 1
   sceneItems: []
 --- !u!1001 &2356309252200769482
@@ -136,10 +137,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5170630770179321758}
     m_Modifications:
-    - target: {fileID: 2593531148933513967, guid: c276ca480035c894bb4b8251ed8f29e1, type: 3}
-      propertyPath: cat
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5114370149218081202, guid: c276ca480035c894bb4b8251ed8f29e1, type: 3}
       propertyPath: m_Name
       value: HelperManager
@@ -213,6 +210,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5170630770179321758}
     m_Modifications:
+    - target: {fileID: 1414013787, guid: 9aae8e738e5499b43be2a2ea8f48bf28, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414013787, guid: 9aae8e738e5499b43be2a2ea8f48bf28, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HoverSound
+      objectReference: {fileID: 0}
     - target: {fileID: 2266925585622656973, guid: 9aae8e738e5499b43be2a2ea8f48bf28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -6,13 +6,7 @@ public class BaseItem : MonoBehaviour
 
     [SerializeField] private int score;
     [SerializeField] private Rigidbody2D rb;
-
-    #endregion
-
-
-    #region Properties
-
-    public Rigidbody2D Rb => rb;
+    [SerializeField] private AudioClip deathAudioClip;
 
     #endregion
 
@@ -21,11 +15,10 @@ public class BaseItem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag(Tags.Cat))
-        {
-            ApplyEffect();
-            Destroy(gameObject);
-        }
+        if (!other.gameObject.CompareTag(Tags.Cat)) return;
+
+        ApplyEffect();
+        Destroy(gameObject);
     }
 
     #endregion
@@ -45,6 +38,7 @@ public class BaseItem : MonoBehaviour
 
     protected virtual void ApplyEffect()
     {
+        SfxAudioSource.Instance.PlaySfx(deathAudioClip);
         GameManager.Instance.UpdateScore(score);
     }
 
