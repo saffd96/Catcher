@@ -19,6 +19,11 @@ public class SceneManager : MonoBehaviour
         Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene(index);
         Debug.LogError($"Load Scene {index}");
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ResetGame();
+        }
     }
 
     #endregion

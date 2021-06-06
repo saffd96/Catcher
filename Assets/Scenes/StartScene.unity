@@ -204,7 +204,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850896195
 GameObject:
@@ -349,7 +349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1164346950
 GameObject:
@@ -524,13 +524,24 @@ RectTransform:
   - {fileID: 1791209500}
   - {fileID: 1164346951}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1309649852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5955287177168791915, guid: 9847e0811cd95ce42a38d472f16bcb8c, type: 3}
+  m_PrefabInstance: {fileID: 1497992361}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5df2f0a68c8e54d84be9c4d7ed9304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1497992361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,17 +599,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9847e0811cd95ce42a38d472f16bcb8c, type: 3}
---- !u!114 &1497992362 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6400616966900207774, guid: 9847e0811cd95ce42a38d472f16bcb8c, type: 3}
-  m_PrefabInstance: {fileID: 1497992361}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf5df2f0a68c8e54d84be9c4d7ed9304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1682570207
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791209499
 GameObject:
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1497992362}
+      - m_Target: {fileID: 1309649852}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3

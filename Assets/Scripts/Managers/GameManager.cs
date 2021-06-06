@@ -14,6 +14,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [Header("DEV")]
     [SerializeField] private BaseItem[] sceneItems;
 
+
     #endregion
 
 
@@ -107,13 +108,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     private void DeleteItemsOnScene()
     {
-        sceneItems = null;
-
         sceneItems = FindObjectsOfType<BaseItem>();
 
         foreach (var item in sceneItems)
         {
-            Destroy(item);
+            Debug.Log(nameof(item));
+            Destroy(item.gameObject);
         }
     }
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Cat : MonoBehaviour
+public class Cat : SingletonMonoBehaviour<Cat>
 {
     #region Variables
 
