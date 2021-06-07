@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HelperManager : MonoBehaviour
+public class HelperManager : SingletonMonoBehaviour<HelperManager>
 {
     #region Variables
 

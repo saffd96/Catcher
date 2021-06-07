@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LivesManager : MonoBehaviour
+public class LivesManager : SingletonMonoBehaviour<LivesManager>
 {
     #region Variables
 

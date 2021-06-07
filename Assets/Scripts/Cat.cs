@@ -6,10 +6,25 @@ public class Cat : SingletonMonoBehaviour<Cat>
 
     [SerializeField] private float boundary;
 
+    private BoxCollider2D boxCollider2D;
+
     #endregion
 
 
     #region Unity Lifecycle
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        var xOffsetInPixels = Screen.width;
+        var vectorOffsetX = new Vector3(xOffsetInPixels, 0, 0);
+        var xOffsetInWorld = Camera.main.ScreenToWorldPoint(vectorOffsetX);
+
+        boxCollider2D = GetComponent<BoxCollider2D>();
+
+        boundary = xOffsetInWorld.x - boxCollider2D.size.x / 2;
+    }
 
     private void Update()
     {
@@ -33,7 +48,7 @@ public class Cat : SingletonMonoBehaviour<Cat>
     {
         Vector3 positionInPixels = Input.mousePosition;
         Vector3 positionInWorld = Camera.main.ScreenToWorldPoint(positionInPixels);
-        
+
         var catPosition = positionInWorld;
 
         catPosition.y = transform.position.y;

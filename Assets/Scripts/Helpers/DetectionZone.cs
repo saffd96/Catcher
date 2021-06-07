@@ -18,7 +18,8 @@ public class DetectionZone : MonoBehaviour
         var xOffsetInPixels = Screen.width;
         var vectorOffsetX = new Vector3(xOffsetInPixels, 0, 0);
         var xOffsetInWorld = Camera.main.ScreenToWorldPoint(vectorOffsetX);
-        var yOffset = 0.1f;
+        var yOffset = 0.5f;
+
         boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.size = new Vector2(xOffsetInWorld.x * 2, yOffset);
 
@@ -40,7 +41,7 @@ public class DetectionZone : MonoBehaviour
         {
             catTransform.position = new Vector3(contactPoint.x, catTransform.position.y, 0);
         }
-        else if (other.gameObject.CompareTag(Tags.BadPowerUp))
+        else if (other.gameObject.CompareTag(Tags.BadPowerUp) || other.gameObject.CompareTag(Tags.BadItem))
         {
             catTransform.position = new Vector3(-contactPoint.x, catTransform.position.y, 0);
         }

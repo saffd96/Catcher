@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : SingletonMonoBehaviour<UIManager>
 {
-
     #region Variables
 
     [Header("UI")]
@@ -15,7 +14,6 @@ public class UIManager : MonoBehaviour
 
 
     #region Unity Lifecycle
-    
 
     private void Update()
     {
@@ -36,7 +34,7 @@ public class UIManager : MonoBehaviour
         pauseView.gameObject.SetActive(false);
         scoreLabel.text = $"Score: {GameManager.Instance.TotalScore}";
     }
-    
+
     public void UpdateScore(int score)
     {
         GameManager.Instance.TotalScore += score;

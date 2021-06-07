@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+public class SceneManager : SingletonMonoBehaviour<SceneManager>
 {
     #region Public methods
 
